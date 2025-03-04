@@ -11,7 +11,11 @@ class SuperHeroRepository extends IRepository {
     }
 
     async buscarPorAtributo(atributo, valor) {
-        return await SuperHero.find( { atributo:valor } );
+        if ( Number(valor) ){
+            return await SuperHero.find( { [atributo]:Number(valor) } );
+        } else {
+            return await SuperHero.find( { [atributo]:{ $regex: valor, $options: "i" } } );
+        }
     }
 
     async obtenerMayoresDe30() {

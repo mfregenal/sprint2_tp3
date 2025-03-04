@@ -1,4 +1,4 @@
-function renderizarSuperheroe(superheroe) {
+export function renderizarSuperheroe(superheroe) {
     return {
         Nombre: superheroe.nombreSuperHeroe,
         "Nombre Real": superheroe.nombreReal,
@@ -11,6 +11,6 @@ function renderizarSuperheroe(superheroe) {
     };
 }
 
-function renderizarListaSuperheroes(superheroes) {
+export function renderizarListaSuperheroes(superheroes) {
     return superheroes.map(renderizarSuperheroe);
 }
